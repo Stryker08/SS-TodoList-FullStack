@@ -23,3 +23,5 @@ hotfix/[name] - This vranch wil automatically go into production this branch typ
     - This contains information about the project
 - Contributing.md
     - Contributing Guidelines / Information
+- .gitignore
+    - Ignores teh files we don't need.
