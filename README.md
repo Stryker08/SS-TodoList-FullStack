@@ -13,12 +13,12 @@
 
 # Hosted URLS:
 ```
-    COMING SOON
+    https://ss-todo-list-full-stack-frontend.vercel.app/
 ```
 
 Backend Website:
 ```
-    COMING SOON
+    https://ss-todo-list-full-stack-backend.vercel.app/
 ```
 # Project Versions
 iOS - NA
