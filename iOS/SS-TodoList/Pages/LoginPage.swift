@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct LoginPage: View {
+  @State var email: String = ""
+  @State var password: String = ""
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack {
+          Spacer()
+          Text("My Todo List")
+            .bold()
+            .font(.largeTitle)
+          Text("Created by: Stryker Shaw")
+          .italic()
+          .padding(.bottom)
+        VStack(spacing: 40) {
+        Spacer()
+          TextField("Email", text: $email)
+          SecureField( "Password", text: $password)
+      Button {
+        
+      } label: {
+        Text("Login")
+      }
+        }
+        .padding()
+          Spacer()
+      }
     }
 }
 

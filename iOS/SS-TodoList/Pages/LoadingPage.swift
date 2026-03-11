@@ -9,7 +9,15 @@ import SwiftUI
 
 struct LoadingPage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack{
+        Text("My Todo List")
+          .bold()
+          .font(.largeTitle)
+        Text("Created by: Stryker Shaw")
+          .italic()
+          .padding(.bottom)
+        ProgressView()
+      }
     }
 }
 

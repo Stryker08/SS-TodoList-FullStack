@@ -10,3 +10,17 @@ export class AppController {
     return this.appService.getHello();
   }
 }
+
+// TodoItem
+// ----------
+// id: String
+// title: String
+// description: String | undefined
+// itemstatus: ItemStatus
+// creationDate: Date
+// lastUpdated: Date
+
+
+// ItemStatus
+// -------------
+// NOTSTARTED, INPROGRESS, COMPLETED, ARCHIVED

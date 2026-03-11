@@ -9,8 +9,44 @@ import SwiftUI
 
 struct HomePage: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      VStack {
+        Header()
+        Spacer()
+        List(mockTodoItems) {item in
+          HStack{
+            Circle()
+              .frame(width:20,
+                     height:20)
+            Text(item.title)
+            Spacer()
+            Image(systemName:"arrow.right")
+          }
+        }
+      }.overlay {
+        ItemEditorOverlay()
+      }
     }
+  
+  func Header() -> some View {
+    return HStack {
+      Menu {
+        Button(role: .destructive) {
+          
+        } label: {
+           Label("Logout", systemImage: "rectangle.portrait.and.arrow.right")
+        }
+      } label: {
+        Image(systemName:"person.crop.circle")
+          .font(.title)
+          
+      }
+      Spacer()
+      Image(systemName: "plus.circle")
+        .font(.title)
+      
+    }
+    .padding()
+  }
 }
 
 #Preview {

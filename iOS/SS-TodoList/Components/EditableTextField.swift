@@ -8,11 +8,35 @@
 import SwiftUI
 
 struct EditableTextField: View {
+  @Binding var text: String
+  @State var isEditing: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+      HStack {
+      if(isEditing) {
+        TextField("", text: $text)
+        Spacer()
+        Image(systemName: "checkmark")
+          .onTapGesture {
+            isEditing = false
+          }
+      } else {
+          Text(text)
+          Spacer()
+          Image(systemName: "pencil.circle")
+          .onTapGesture {
+              isEditing = true
+          }
+        }
+      } .padding()
     }
+    
 }
 
 #Preview {
-    EditableTextField()
+  @Previewable @State var text: String = "Lorme Ipsum Dolar Amit"
+  VStack {
+    EditableTextField(text: $text)
+    EditableTextField(text: $text,
+              isEditing: true)
+  }
 }
