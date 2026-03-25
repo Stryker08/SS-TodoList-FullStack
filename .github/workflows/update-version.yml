@@ -29,5 +29,5 @@ jobs:
           git config user.name "Github Actions"
           git config user.email "github-actions@github.com"
           git add README.md
-          git comit -m "chore: update version in README" || echo "No Changes"
+          git commit -m "chore: update version in README" || echo "No Changes"
           git push
