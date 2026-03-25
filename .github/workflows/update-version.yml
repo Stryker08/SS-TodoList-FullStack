@@ -25,11 +25,19 @@ jobs:
           NEST_VERSION=$(jq -r '.version' web/package.json)
           echo "nest=$NEST_VERSION" >> $GITHUB_OUTPUT
       
+          IOS_VERSION="NA"
+          PBXPROJ=$(find . -name "project.pbxproj" | head -n 1)
+          if [-n "$PBXPROJ"]; then
+            IOS_VERSION=$(grep -m 1 "MARKETING_VERSION" "$PBXPROJ" | sed 's/.*= \(.*\);/\1/') | tr -d ' '
+          fi
+
+          echo "ios=$IOS_VERSION" >> $GITHUB_OUTPUT
+      #MARKETING_VERSION
       - name: Update Readme 
         run: |
           sed -i "s|<!--NEXT_JS_VERSION-->.*<!--NEXT_JS_VERSION_END-->|<!--NEXT_JS_VERSION-->${{steps.versions.outputs.next}}<!--NEXT_JS_VERSION_END-->|" README.md
           sed -i "s|<!--NEST_VERSION-->.*<!--NEST_VERSION_END-->|<!--NEST_VERSION-->${{steps.versions.outputs.nest}}<!--NEST_VERSION_END-->|" README.md
-
+          sed -i "s|<!--IOS_Version-->.*<!--IOS_Version_END-->|<!--IOS_Version-->${{steps.versions.outputs.ios}}<!--IOS_Version_END-->|" README.md
 
       - name: Commit Changes
         run: | 
