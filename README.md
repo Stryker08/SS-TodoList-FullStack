@@ -21,6 +21,6 @@ Backend Website:
     https://ss-todo-list-full-stack-backend.vercel.app/
 ```
 # Project Versions
-iOS - NA
-Next.JS - NA
-Nest - NA
+iOS - <!--IOS_Version-->NA<!--IOS_Version_END-->
+Next.JS - <!--NEXT_JS_VERSION-->NA<!--NEXT_JS_VERSION_END-->
+Nest - <!--NEST_VERSION-->NA<!--NEST_VERSION_END-->
