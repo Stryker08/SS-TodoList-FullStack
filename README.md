@@ -23,4 +23,4 @@ Backend Website:
 # Project Versions
 iOS - <!--IOS_Version-->NA<!--IOS_Version_END-->
 Next.JS - <!--NEXT_JS_VERSION-->0.1.0<!--NEXT_JS_VERSION_END-->
-Nest - <!--NEST_VERSION-->NA<!--NEST_VERSION_END-->
+Nest - <!--NEST_VERSION-->0.1.0<!--NEST_VERSION_END-->
