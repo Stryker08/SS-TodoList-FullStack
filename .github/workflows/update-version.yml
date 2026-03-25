@@ -17,14 +17,14 @@ jobs:
       - name: Read Versions
         id: versions
         run: |
-          NEXT_VERSION=$(jq -r '.version'web/package.json)
+          NEXT_VERSION=$(jq -r '.version' web/package.json)
           echo "next=$NEXT_VERSION" >> $$GITHUB_OUTPUT
       
       - name: Update Readme 
         run: |
           sed -i "s|<!--NEXT_JS_VERSION-->.*<!--NEXT_JS_VERSION_END-->|<!--NEXT_JS_VERSION-->${{steps.versions.outputs.next}}<!--NEXT_JS_VERSION_END-->" README.md
 
-      - name: Comit Changes
+      - name: Commit Changes
         run: | 
           git config user.name "Github Actions"
           git config user.email "github-actions@github.com"
