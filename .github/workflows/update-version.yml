@@ -17,7 +17,7 @@ jobs:
       - name: Read Versions
         id: versions
         run: |
-          NEXT_VERSION=$(jq-r '.version'web/package.json)
+          NEXT_VERSION=$(jq -r '.version'web/package.json)
           echo "next=$NEXT_VERSION" >> $$GITHUB_OUTPUT
       
       - name: Update Readme 
