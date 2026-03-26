@@ -1,4 +1,4 @@
-# SS-TodoList-FullStack
+# SS-TodoList-FullStack ![Generated Lines of Code](https://stryker08.github.io/SS-TodoList-FullStack/badge.svg)
 
 ## Project Tech Stack
 - Frontend
