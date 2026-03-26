@@ -21,12 +21,26 @@ services:
     restart: unless-stopped
     depends_on:
       - mysql
-    environment:
-      PMA_HOST: mysql
-      PMA_PORT: 3306
-      MYSQL_ROOT_PASSWORD: BeATiger
+  nest:
+    build: ./backend
+    container_name: backend
+    restart: always
     ports:
-      - "8000:80"
+      - "6000:3000"
+    depends_on:
+      - mysql
+    environment:
+      - DB_HOST=mysql
+  next:
+    build: ./web
+    container_name: frontend
+    restart: always
+    ports:
+      - "6000:3000"
+    depends_on:
+      - nest
+    
+    
 
 volumes:
   mysql_data:
